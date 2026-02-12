@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Liga Vistahermosa F7 – Scraper</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 24px; }
+      .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+      button { padding: 10px 14px; cursor: pointer; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 16px; }
+      @media (min-width: 1000px) { .grid { grid-template-columns: 1fr 1fr; } }
+      .card { border: 1px solid #ddd; border-radius: 10px; padding: 14px; }
+      h2 { margin: 0 0 10px; font-size: 18px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      th, td { border-bottom: 1px solid #eee; padding: 6px 8px; text-align: left; }
+      th { font-weight: 600; background: #fafafa; }
+      .muted { color: #666; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .small { font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <h1 style="margin:0;">Liga Vistahermosa F7 – Scraper</h1>
+      <button id="refresh">Actualizar</button>
+      <span id="status" class="muted"></span>
+    </div>
+    <div class="small muted" style="margin-top:6px;">
+      Fuente: <span class="mono">/api/group</span> (proxy para evitar CORS)
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>📊 Clasificación (calculada)</h2>
+        <div id="standings"></div>
+      </div>
+
+      <div class="card">
+        <h2>⚽ Resultados por jornada</h2>
+        <div id="results"></div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
